@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-array-carousel</title>
+
+    <!-- style font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- js -->
+    <script type="text/javascript" src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="carousel-container" @mouseover="stopAutoplay()" @mouseleave="startAutoplay()">
+                <div class="container-slide">
+                    <img v-for="(image, index) in images" :src="'./img/' + image" class="slide"
+                        :class="index == activeImage ? 'active' : ''" />
+                </div>
+
+                <div class="arrow-prev" @click="prevClick()">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div>
+
+                <div class="arrow-next" @click="nextClick()">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="thumbnails-list">
+                    <div class="container-thumb-img" @click="goToSlide(index)" v-for="(image, index) in images"
+                        :class="index == activeImage ? 'active' : ''">
+                        <img :src="'./img/' + image" class="thumb-slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
