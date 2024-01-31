@@ -30,12 +30,6 @@ createApp({
             this.activeImage = index;
         },
 
-        startCarousel(){
-            intervalNext = setInterval(function(){
-                goToSlide(this.activeImage >= this.images.length ? 0 : this.activeImage + 1)
-            }, 3000);
-        },
-
         startAutoplay(){
             this.autoplay = setInterval(() => {
                 this.nextClick()
