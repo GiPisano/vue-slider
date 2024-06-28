@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #000000;
+}
+
 .debug{
     border: 2px solid black;
 }
@@ -28,7 +32,7 @@
 }
 
 .carousel-container:hover{
-    box-shadow: 5px 10px 8px 10px #888888;
+    box-shadow: 5px 8px 5px 8px #403f3f;
     height: 480px;
     width: 980px;
     transition: all .6s;
@@ -68,6 +72,9 @@
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrow-next{
